@@ -1,0 +1,30 @@
+﻿@model UndergraduateViewModel
+
+<h1>Welcome to Undergraduate Programs Page</h1>
+
+@if (Model.undergraduate != null && Model.undergraduate.Any())
+{
+    <div class="row">
+        @foreach (var undergrad in Model.undergraduate)
+        {
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h2>@undergrad.title</h2>
+                <p>@undergrad.description</p>
+
+                <h3>Concentrations:</h3>
+                <ul>
+                    @foreach (var concentration in undergrad.concentrations)
+                    {
+                        <li>@concentration</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        <h4>No undergraduate programs available</h4>
+    </div>
+}

@@ -1,0 +1,43 @@
+﻿@model Proj3.Models.FacultyViewModel
+
+<h1>Faculty Information</h1>
+
+@if (Model != null && Model.faculty != null && Model.faculty.Any())
+{
+    <div class="row">
+        @foreach (var faculty in Model.faculty)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@faculty.imagePath" class="card-img-top" alt="@faculty.name">
+                    <div class="card-body">
+                        <h5 class="card-title">@faculty.name</h5>
+                        <p class="card-text"><strong>Title:</strong> @faculty.title</p>
+                        <p class="card-text"><strong>Office:</strong> @faculty.office</p>
+                        @if (!string.IsNullOrWhiteSpace(faculty.website))
+                        {
+                            <p class="card-text"><strong>Website:</strong> <a href="@faculty.website" target="_blank">@faculty.website</a></p>
+                        }
+                        <p class="card-text"><strong>Email:</strong> <a href="mailto:@faculty.email">@faculty.email</a></p>
+                        @if (!string.IsNullOrWhiteSpace(faculty.phone))
+                        {
+                            <p class="card-text"><strong>Phone:</strong> @faculty.phone</p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(faculty.twitter))
+                        {
+                            <p class="card-text"><strong>Twitter:</strong> <a href="https://twitter.com/@faculty.twitter" target="_blank">@faculty.twitter</a></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(faculty.facebook))
+                        {
+                            <p class="card-text"><strong>Facebook:</strong> <a href="https://www.facebook.com/@faculty.facebook" target="_blank">@faculty.facebook</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No faculty information available.</p>
+}

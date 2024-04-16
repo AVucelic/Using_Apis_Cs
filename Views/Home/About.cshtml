@@ -1,0 +1,15 @@
+﻿@model AboutModel
+
+<h2>@Model.title</h2>
+<p>@Model.description</p>
+
+@if (!string.IsNullOrEmpty(Model.quote))
+{
+    <blockquote>
+        <p>@Model.quote</p>
+        @if (!string.IsNullOrEmpty(Model.quoteAuthor))
+        {
+            <footer>- @Model.quoteAuthor</footer>
+        }
+    </blockquote>
+}

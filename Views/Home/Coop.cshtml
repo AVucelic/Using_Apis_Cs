@@ -1,0 +1,36 @@
+﻿@model Proj3.Models.CoopViewModel
+
+<h1>Welcome to Co-op Table Page</h1>
+
+@if (Model.coopTable != null && Model.coopTable.coopInformation != null && Model.coopTable.coopInformation.Any())
+{
+    <h2>@Model.coopTable.title</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Term</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var coopInfo in Model.coopTable.coopInformation)
+            {
+                <tr>
+                    <td>@coopInfo.employer</td>
+                    <td>@coopInfo.degree</td>
+                    <td>@coopInfo.city</td>
+                    <td>@coopInfo.term</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        <h4>No co-op information available</h4>
+    </div>
+}

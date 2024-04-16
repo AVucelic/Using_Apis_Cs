@@ -1,0 +1,20 @@
+﻿@model NewsViewModel
+
+<h1>Welcome to News Page</h1>
+
+@if (Model.Older is not null)
+{
+    @foreach (var news in Model.Older)
+    {
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <h4><b>@news.Date:</b> @news.Title</h4>
+            <p>@news.Description</p>
+        </div>
+    }
+}
+else
+{
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        <h4>No data returned for news endpoint</h4>
+    </div>
+}

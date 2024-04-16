@@ -1,0 +1,38 @@
+﻿@model Proj3.Models.EmploymentViewModel
+
+<h1>Welcome to Employment Table Page</h1>
+
+@if (Model.employmentTable != null && Model.employmentTable.professionalEmploymentInformation != null && Model.employmentTable.professionalEmploymentInformation.Any())
+{
+    <h2>@Model.employmentTable.title</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Term</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employmentInfo in Model.employmentTable.professionalEmploymentInformation)
+            {
+                <tr>
+                    <td>@employmentInfo.employer</td>
+                    <td>@employmentInfo.degree</td>
+                    <td>@employmentInfo.city</td>
+                    <td>@employmentInfo.title</td>
+                    <td>@employmentInfo.startDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        <h4>No employment information available</h4>
+    </div>
+}

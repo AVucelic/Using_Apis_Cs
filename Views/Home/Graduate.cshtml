@@ -1,0 +1,44 @@
+﻿@model GraduateViewModel
+
+<h1>Welcome to Graduate Programs Page</h1>
+
+@if (Model.graduate != null && Model.graduate.Any())
+{
+    <div class="row">
+        @foreach (var program in Model.graduate)
+        {
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h2>@program.title</h2>
+                <p>@program.description</p>
+
+                @if (program.concentrations != null && program.concentrations.Any())
+                {
+                    <h3>Concentrations:</h3>
+                    <ul>
+                        @foreach (var concentration in program.concentrations)
+                        {
+                            <li>@concentration</li>
+                        }
+                    </ul>
+                }
+
+                @if (program.availableCertificates != null && program.availableCertificates.Any())
+                {
+                    <h3>Available Certificates:</h3>
+                    <ul>
+                        @foreach (var certificate in program.availableCertificates)
+                        {
+                            <li>@certificate</li>
+                        }
+                    </ul>
+                }
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        <h4>No graduate programs available</h4>
+    </div>
+}
