@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXkRYsDWdqU2j76uJFVlahwAAAAACAAAAAAAQZgAAAAEAACAAAABhfzW2BGaiyhvvIMqWKrgrO5pgJ1PB3qiyqlVXR8+0aQAAAAAOgAAAAAIAACAAAAD4hY0dIVs0iCCi63qBtJpI5G1xzZBOYv+OzjLhpGzDyyAAAACvbaDlfY/NwUgw72AbZA5fzSRJ4pY+KpZDUwAvdWmgckAAAAB9hSc8OjyILvQDcC2qG0HVEZoVO4IZlPPXlS5YxmWdLs33rkFlk4hB0xDc/3e0v0bN73Fl9IEt3WCQnTsDjc0v</EncryptedPassword>
+    <_PublishTargetUrl>ftp://solace.ist.rit.edu</_PublishTargetUrl>
+    <History>False|2024-04-28T22:53:29.9661850Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
