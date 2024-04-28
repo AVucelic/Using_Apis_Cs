@@ -1,87 +1,90 @@
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+    font-size: 14px;
   }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-    background-image: url('../Vendor/golisano.jpg');
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center !important;
-}
-
-.navbar {
-    background-color: #f76902 !important;
-}
-
-.navbar-brand {
-    font-size: 1.5rem !important; /* Increase font size for the brand */
-    font-weight: bold !important;
-    color: #fff !important; /* White color for brand */
-}
-
-.navbar-nav .nav-link {
-    font-weight: 500 !important;
-    color: #fff !important; /* White color for links */
-    transition: color 0.3s ease !important; /* Smooth color transition */
-}
-
-.navbar-nav .nav-link:hover {
-     color: #000 !important; /* Black color on hover */
-}
-
-.footer {
-    background-color: #f76902; /* Example background color */
-    color: white !important; /* Text color */
-    text-align: center; /* Center align text */
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: white;
-}
-
-.content {
-    text-align: center;
-}
-
-span{
-    color: #f76902;
-}
-
-.hh{
-    font-size: 60px !important; 
-}
-
-.rit{
-    font-size: 25px !important;
-}
-
-.black-background {
-    background-color: #f76902 !important;
-    padding: 50px !important;
-    border-radius: 30px;
-
-}
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+      background-image: url('../Vendor/golisano.jpg');
+      background-repeat: repeat;
+      background-size: cover !important;
+      background-position: center !important;
+  }
+  
+  .navbar {
+      background-color: #f76902 !important;
+  }
+  
+  .navbar-brand {
+      font-size: 1.5rem !important; 
+      font-weight: bold !important;
+      color: #fff !important; 
+  }
+  
+  .navbar-nav .nav-link {
+      font-weight: 500 !important;
+      color: #fff !important;
+      transition: color 0.3s ease !important;
+  }
+  
+  .navbar-nav .nav-link:hover {
+       color: #000 !important;
+  }
+  
+  .footer {
+      background-color: #f76902;
+      color: white !important;
+      text-align: center;
+  }
+  
+  html, body {
+      height: 100%;
+      margin: 0;
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: white;
+  }
+  
+  
+  .content {
+      text-align: center;
+  }
+  
+  span{
+      color: #f76902;
+  }
+  
+  .hh{
+      font-size: 60px !important; 
+  }
+  
+  .rit{
+      font-size: 25px !important;
+  }
+  
+  .black-background {
+      background-color: #f76902 !important;
+      padding: 50px !important;
+      border-radius: 30px;
+  
+  }
+  
