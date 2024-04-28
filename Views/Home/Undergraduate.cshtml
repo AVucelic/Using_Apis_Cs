@@ -2,12 +2,12 @@
 
 <h1>Welcome to Undergraduate Programs Page</h1>
 
-@if (Model.undergraduate != null && Model.undergraduate.Any())
-{
-    <div class="row">
+<div class="row">
+    @if (Model.undergraduate != null && Model.undergraduate.Any())
+    {
         @foreach (var undergrad in Model.undergraduate)
         {
-            <div class="col-sm-12 col-lg-12 col-md-12">
+            <div class="col-sm-12 col-lg-12 col-md-12 program">
                 <h2>@undergrad.title</h2>
                 <p>@undergrad.description</p>
 
@@ -20,11 +20,31 @@
                 </ul>
             </div>
         }
-    </div>
+    }
+    else
+    {
+        <div class="col-sm-12 col-lg-12 col-md-12 program">
+            <h4>No undergraduate programs available</h4>
+        </div>
+    }
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".program").each(function (index) {
+                $(this).hide().delay(400 * index).fadeIn(1000);
+            });
+        });
+    </script>
 }
-else
-{
-    <div class="col-sm-12 col-lg-12 col-md-12">
-        <h4>No undergraduate programs available</h4>
-    </div>
-}
+
+<style>
+    .program {
+        background-color: #f76902;
+        color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+    }
+</style>

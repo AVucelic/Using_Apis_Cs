@@ -4,35 +4,38 @@
 
 @if (Model != null && Model.faculty != null && Model.faculty.Any())
 {
-    <div class="row">
+    <style>
+        /* Style for active accordion header */
+        #accordion-faculty .ui-accordion-header-active {
+            background-color: orange;
+            color: white; /* Change text color to ensure visibility */
+        }
+    </style>
+    <div id="accordion-faculty">
         @foreach (var faculty in Model.faculty)
         {
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="@faculty.imagePath" class="card-img-top" alt="@faculty.name">
-                    <div class="card-body">
-                        <h5 class="card-title">@faculty.name</h5>
-                        <p class="card-text"><strong>Title:</strong> @faculty.title</p>
-                        <p class="card-text"><strong>Office:</strong> @faculty.office</p>
-                        @if (!string.IsNullOrWhiteSpace(faculty.website))
-                        {
-                            <p class="card-text"><strong>Website:</strong> <a href="@faculty.website" target="_blank">@faculty.website</a></p>
-                        }
-                        <p class="card-text"><strong>Email:</strong> <a href="mailto:@faculty.email">@faculty.email</a></p>
-                        @if (!string.IsNullOrWhiteSpace(faculty.phone))
-                        {
-                            <p class="card-text"><strong>Phone:</strong> @faculty.phone</p>
-                        }
-                        @if (!string.IsNullOrWhiteSpace(faculty.twitter))
-                        {
-                            <p class="card-text"><strong>Twitter:</strong> <a href="https://twitter.com/@faculty.twitter" target="_blank">@faculty.twitter</a></p>
-                        }
-                        @if (!string.IsNullOrWhiteSpace(faculty.facebook))
-                        {
-                            <p class="card-text"><strong>Facebook:</strong> <a href="https://www.facebook.com/@faculty.facebook" target="_blank">@faculty.facebook</a></p>
-                        }
-                    </div>
-                </div>
+            <h3><b>@faculty.name</b></h3>
+            <div>
+                <img src="@faculty.imagePath" class="card-img-top" alt="@faculty.name">
+                <p><strong>Title:</strong> @faculty.title</p>
+                <p><strong>Office:</strong> @faculty.office</p>
+                @if (!string.IsNullOrWhiteSpace(faculty.website))
+                {
+                    <p><strong>Website:</strong> <a href="@faculty.website" target="_blank">@faculty.website</a></p>
+                }
+                <p><strong>Email:</strong> <a href="mailto:@faculty.email">@faculty.email</a></p>
+                @if (!string.IsNullOrWhiteSpace(faculty.phone))
+                {
+                    <p><strong>Phone:</strong> @faculty.phone</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(faculty.twitter))
+                {
+                    <p><strong>Twitter:</strong> <a href="https://twitter.com/@faculty.twitter" target="_blank">@faculty.twitter</a></p>
+                }
+                @if (!string.IsNullOrWhiteSpace(faculty.facebook))
+                {
+                    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/@faculty.facebook" target="_blank">@faculty.facebook</a></p>
+                }
             </div>
         }
     </div>
@@ -40,4 +43,15 @@
 else
 {
     <p>No faculty information available.</p>
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            $("#accordion-faculty").accordion({
+                collapsible: true,
+                heightStyle: "content"
+            });
+        });
+    </script>
 }

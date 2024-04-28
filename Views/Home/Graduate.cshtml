@@ -7,7 +7,7 @@
     <div class="row">
         @foreach (var program in Model.graduate)
         {
-            <div class="col-sm-12 col-lg-12 col-md-12">
+            <div class="col-sm-12 col-lg-12 col-md-12 program">
                 <h2>@program.title</h2>
                 <p>@program.description</p>
 
@@ -38,7 +38,27 @@
 }
 else
 {
-    <div class="col-sm-12 col-lg-12 col-md-12">
+    <div class="col-sm-12 col-lg-12 col-md-12 program">
         <h4>No graduate programs available</h4>
     </div>
 }
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".program").each(function (index) {
+                $(this).hide().delay(400 * index).fadeIn(1000);
+            });
+        });
+    </script>
+}
+
+<style>
+    .program {
+        background-color: #f76902;
+        color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+    }
+</style>
