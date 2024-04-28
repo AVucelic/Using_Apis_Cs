@@ -1,0 +1,6 @@
+﻿.ui-state-active {
+    border: 1px solid #212529;
+    background: #ffc107;
+    font-weight: normal;
+    color: #ffffff;
+}
