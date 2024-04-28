@@ -1,0 +1,18 @@
+﻿@model AboutModel
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+
+<div class="black-background">
+    <h2>@Model.title</h2>
+    <p>@Model.description</p>
+    
+    @if (!string.IsNullOrEmpty(Model.quote))
+    {
+        <blockquote>
+            <p>@Model.quote</p>
+            @if (!string.IsNullOrEmpty(Model.quoteAuthor))
+            {
+                <footer>- @Model.quoteAuthor</footer>
+            }
+        </blockquote>
+    }
+</div>
